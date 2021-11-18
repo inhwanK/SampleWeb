@@ -1,4 +1,4 @@
-package egovframework.sample.service.impl;
+package egovframework.sample.service;
 
 public interface SampleDAO {
 

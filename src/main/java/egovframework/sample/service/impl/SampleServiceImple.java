@@ -1,11 +1,11 @@
 package egovframework.sample.service.impl;
 
+import egovframework.sample.service.SampleDAO;
 import egovframework.sample.service.SampleService;
 
 public class SampleServiceImple implements SampleService {
 	private SampleDAO sampleDAO;
 	private String version;
-	
 	
 	public SampleServiceImple() throws Exception{
 		System.out.println("===> SampleServiceImple 생성자1");
@@ -18,7 +18,6 @@ public class SampleServiceImple implements SampleService {
 		this.sampleDAO = sampleDAO;
 	}
 	
-
 	public SampleServiceImple(SampleDAO sampleDAO, String version) {
 		super();
 		this.sampleDAO = sampleDAO;
@@ -46,4 +45,14 @@ public class SampleServiceImple implements SampleService {
 		System.out.println("SampleService-Sample 목록");
 		sampleDAO.selectSampleList();
 	}
+
+	public void setSampleDAO(SampleDAO sampleDAO) {
+		this.sampleDAO = sampleDAO;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+	
+	
 }

@@ -11,8 +11,8 @@ public class SampleServiceClient {
 		AbstractApplicationContext container = new GenericXmlApplicationContext("egovframework/spring/context-common.xml");
 		
 		SampleServiceImple sampleService = (SampleServiceImple) container.getBean("sampleService");
-		sampleService.insertSample();
-		sampleService.selectSampleList();
+//		sampleService.insertSample();
+//		sampleService.selectSampleList();
 		
 		container.close();
 	}

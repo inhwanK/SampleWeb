@@ -1,5 +1,7 @@
 package egovframework.sample.service.impl;
 
+import egovframework.sample.service.SampleDAO;
+
 public class SampleDAOIBatis implements SampleDAO{
 
 	public SampleDAOIBatis() {

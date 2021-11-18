@@ -4,10 +4,34 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<bean id="sampleService" class="egovframework.sample.service.impl.SampleServiceImple">
-		<constructor-arg ref="jdbc"></constructor-arg>
-		<constructor-arg value="SampleWeb-1.0.0"></constructor-arg>
+		<property name="sampleDAO" ref="ibatis"></property>
+		<property name="version" value="SampleWeb-1.0.0"></property>
+		<!-- <constructor-arg ref="jdbc"></constructor-arg>
+		<constructor-arg value="SampleWeb-1.0.0"></constructor-arg> -->
 	</bean>
 	
 	<bean id="jdbc" class="egovframework.sample.service.impl.SampleDAOJDBC"></bean>
 	<bean id="ibatis" class="egovframework.sample.service.impl.SampleDAOIBatis"></bean>
+	<bean id="collectionBean" class="egovframework.sample.service.impl.CollectionBean">
+		
+		<!-- <property name="addressList">
+			<map>
+				<entry>
+					<key><value>김인환</value></key>
+					<value>대구 수성구 만촌동</value>
+				</entry>
+				<entry>
+					<key><value>김재환</value></key>
+					<value>대구 수성구 범어동</value>
+				</entry>
+			</map>
+		</property> -->
+		
+		<property name="addressList">
+			<props>
+				<prop key="김인환">대구 수성구 만촌동</prop>
+				<prop key="김재환">대구 수성구 범어동</prop>
+			</props>
+		</property>
+	</bean>
 </beans>
